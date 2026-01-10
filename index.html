@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DAARA AL MOUSTAKHIMOUNA | LIVE 1S</title>
+    <title>DAARA AL MOUSTAKHIMOUNA | LIVE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
@@ -11,7 +11,6 @@
             --primary: #27ae60;
             --danger: #e74c3c;
             --dark: #2d3436;
-            --warning: #3498db;
         }
         body { font-family: 'Poppins', sans-serif; background: #2c3e50; margin: 0; min-height: 100vh; color: white; }
         
@@ -20,66 +19,67 @@
             padding: 15px 20px; background: linear-gradient(90deg, #3498db, #2ecc71); 
             color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        header h1 { flex: 1; text-align: center; font-size: 16px; font-weight: 800; margin: 0; text-transform: uppercase; }
-        header img { height: 55px; width: 55px; border-radius: 50%; border: 2px solid white; object-fit: cover; }
+        header h1 { flex: 1; text-align: center; font-size: 14px; font-weight: 800; margin: 0; text-transform: uppercase; }
+        header img { height: 50px; width: 50px; border-radius: 50%; border: 2px solid white; object-fit: cover; }
 
         .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
 
-        /* INDICATEUR LIVE */
-        .live-status { text-align: center; margin-bottom: 15px; font-size: 12px; font-weight: bold; color: #2ecc71; }
+        /* INDICATEUR LIVE CLIGNOTANT */
+        .live-status { text-align: center; margin-bottom: 15px; font-size: 11px; font-weight: bold; color: #2ecc71; text-transform: uppercase; letter-spacing: 1px; }
         .dot { height: 10px; width: 10px; background-color: #2ecc71; border-radius: 50%; display: inline-block; margin-right: 5px; animation: blink 1s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
 
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; margin-bottom: 25px; }
         .stat-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 20px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.2); }
-        .stat-value { font-size: 1.5rem; font-weight: 800; color: gold; }
+        .stat-value { font-size: 1.5rem; font-weight: 800; color: #f1c40f; }
 
-        .admin-top-bar { text-align: center; margin-bottom: 30px; }
-        .btn-admin-toggle { padding: 12px 25px; border-radius: 50px; border: none; background: #34495e; color: white; font-weight: 800; cursor: pointer; }
+        .admin-top-bar { text-align: center; margin-bottom: 25px; }
+        .btn-admin-toggle { padding: 12px 25px; border-radius: 50px; border: none; background: #34495e; color: white; font-weight: 800; cursor: pointer; transition: 0.3s; }
+        .btn-admin-toggle:hover { background: #2c3e50; transform: scale(1.05); }
 
         .search-bar { 
             width: 100%; max-width: 500px; display: block; margin: 0 auto 30px auto; 
             padding: 15px 25px; border-radius: 50px; border: none; font-size: 16px; outline: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
 
         .members-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         
-        /* CARTE MEMBRE */
         .member-card {
             background: white; border-radius: 25px; padding: 40px 15px 20px 15px; text-align: center; 
             position: relative; color: #2d3436; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
-        .card-logo { position: absolute; top: 10px; right: 10px; width: 50px; height: 50px; border-radius: 10px; object-fit: cover; }
+        .card-logo { position: absolute; top: 12px; right: 12px; width: 45px; height: 45px; border-radius: 8px; object-fit: cover; }
         
         .photo-container {
-            width: 130px; height: 130px; margin: 0 auto 15px auto;
+            width: 125px; height: 125px; margin: 0 auto 15px auto;
             border-radius: 50%; border: 5px solid #f0f0f0; overflow: hidden;
         }
         .border-green { border-color: var(--primary) !important; }
         .border-red { border-color: var(--danger) !important; }
 
-        .member-name { font-size: 17px; font-weight: 800; color: #2c3e50; margin-bottom: 15px; min-height: 45px; }
+        .member-name { font-size: 16px; font-weight: 800; color: #2c3e50; margin-bottom: 15px; min-height: 40px; display: flex; align-items: center; justify-content: center; }
 
-        .payment-status { display: flex; gap: 8px; margin-bottom: 10px; }
+        .payment-status { display: flex; gap: 8px; margin-bottom: 12px; }
         .pay-box { flex: 1; padding: 10px 5px; border-radius: 15px; background: #f8f9fa; font-size: 10px; font-weight: 700; border: 1px solid #eee; }
-        .reste-txt { color: var(--danger); display: block; font-weight: 800; }
+        .reste-txt { color: var(--danger); display: block; font-weight: 800; margin-top: 3px; }
 
         .status-badge { display: inline-block; padding: 4px 12px; border-radius: 50px; color: white; font-size: 9px; font-weight: bold; }
         .bg-red { background: var(--danger); }
         .bg-green { background: var(--primary); }
 
-        .btn-wave { width: 100%; margin-top: 15px; padding: 12px; border-radius: 15px; border: none; background: #ebfaff; color: #00a8ff; font-weight: 800; cursor: pointer; }
+        .btn-wave { width: 100%; margin-top: 15px; padding: 12px; border-radius: 15px; border: none; background: #e3f2fd; color: #1976d2; font-weight: 800; cursor: pointer; }
         
-        /* ADMIN */
+        /* ZONE ADMIN */
         .admin-zone { margin-top: 15px; padding-top: 15px; border-top: 1px dashed #ccc; display: flex; flex-direction: column; gap: 5px; }
-        .admin-input { padding: 8px; border-radius: 10px; border: 1px solid #ddd; text-align: center; }
+        .admin-input { padding: 8px; border-radius: 10px; border: 1px solid #ddd; text-align: center; font-family: inherit; }
         .btn-save { background: var(--primary); color: white; border: none; padding: 8px; border-radius: 10px; cursor: pointer; font-weight: bold; }
 
+        /* MODAL */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; align-items: center; justify-content: center; z-index: 2000; }
-        .modal-content { background: white; width: 90%; max-width: 380px; border-radius: 30px; padding: 30px; text-align: center; color: #333; }
+        .modal-content { background: white; width: 85%; max-width: 350px; border-radius: 25px; padding: 25px; text-align: center; color: #333; }
         
-        #loader { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background: white; color: var(--primary); padding: 10px 20px; border-radius: 50px; font-weight: bold; display: none; z-index: 3000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        #loader { position: fixed; top: 15px; left: 50%; transform: translateX(-50%); background: #27ae60; color: white; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: bold; display: none; z-index: 3000; }
     </style>
 </head>
 <body>
@@ -88,21 +88,21 @@
 
 <header>
     <img src="images/A.jpeg" onerror="this.src='https://ui-avatars.com/api/?name=D&background=fff&color=2ecc71'">
-    <h1>DAARA AL MOUSTAKHIMOUNA | FINANCES</h1>
+    <h1>DAARA AL MOUSTAKHIMOUNA</h1>
     <img src="images/A.jpeg" onerror="this.src='https://ui-avatars.com/api/?name=D&background=fff&color=2ecc71'">
 </header>
 
 <div class="container">
-    <div class="live-status"><span class="dot"></span> SYNCHRONISATION EN DIRECT (1S)</div>
+    <div class="live-status"><span class="dot"></span> SYNC EN DIRECT (1s)</div>
 
     <div class="stats-grid">
         <div class="stat-card">
-            <h4 style="margin:0">Reste Total à Collecter</h4>
-            <div class="stat-value" id="detteGlobale">-</div>
+            <h4 style="margin:0; font-size: 12px; opacity: 0.8;">RESTE À COLLECTER</h4>
+            <div class="stat-value" id="detteGlobale">0 F</div>
         </div>
         <div class="stat-card">
-            <h4 style="margin:0">Total Encaissé</h4>
-            <div class="stat-value" id="totalEncaisse" style="color:#2ecc71">-</div>
+            <h4 style="margin:0; font-size: 12px; opacity: 0.8;">TOTAL ENCAISSÉ</h4>
+            <div class="stat-value" id="totalEncaisse" style="color:#2ecc71">0 F</div>
         </div>
     </div>
 
@@ -116,13 +116,12 @@
 
 <div class="modal-overlay" id="waveModal">
     <div class="modal-content">
-        <h3 style="color:var(--warning)">🌊 Infos de Paiement</h3>
-        <p style="font-size: 14px;">Envoyez votre participation via Wave :</p>
-        <div style="text-align:left; background:#f9f9f9; padding:15px; border-radius:15px; font-size:13px;">
-            <p>Seydou Sall : <b>77 462 95 28</b></p>
-            <p>Malick Sarr : <b>78 122 37 73</b></p>
-            <p>Ibrahima Sanokho : <b>77 256 70 34</b></p>
-            <p>Khadidiatou Sall : <b>78 787 01 58</b></p>
+        <h3 style="color:#1976d2">🌊 Transfert Wave</h3>
+        <div style="text-align:left; background:#f1f2f6; padding:15px; border-radius:15px; font-size:12px; line-height: 1.8;">
+            Seydou Sall : <b>77 462 95 28</b><br>
+            Malick Sarr : <b>78 122 37 73</b><br>
+            Ibrahima Sanokho : <b>77 256 70 34</b><br>
+            Khadidiatou Sall : <b>78 787 01 58</b>
         </div>
         <button onclick="closeWave()" style="margin-top:20px; padding:10px 30px; border-radius:50px; border:none; background:#2d3436; color:white; cursor:pointer; font-weight:bold;">FERMER</button>
     </div>
@@ -138,18 +137,15 @@
 
     const noms = ["Dieuwrigne Omar Ndaw", "Dieuwrigne Abdou Khoudoss Ngom", "Dieuwrigne Cheikh Cissé", "Dieuwrigne Malick Sarr", "Dieuwrigne Madiagne Sidibé", "Dieuvrigne Abdoulaye Sall", "Dieuwrigne Idrissa ben Abdoulaye Diouf", "Dieuwrigne Ibrahima Sanokho", "Dieuwrigne Moussa Sarr", "Dieuwrigne Cheikh Sall", "Dieuwrigne Ousmane Sall", "Dieuwrigne Mouhamed Ngom", "Dieuwrigne Omar Sanokho Al Farokh", "Diewrigne Ousmane Sanokho", "Dieuwrigne Mamadou FALL", "Dieuwrigne Birane Diop", "Dieuwrigne Bassirou Cissé", "Dieuwrigne Pape Masséne Séne", "Dieuwrigne Ibrahima diarra", "Dieuwrigne Mamady Fall Ndaw", "Dieuwrigne Seydou Sall", "Dieuwrigne Mouhamed Sall", "Dieuwrigne Cheikh Mbacké", "Dieuwrigne Sidi Sall", "Dieuwrigne Pape Sow sall", "Dieuwrigne Fallou Diop", "Dieuwrigne Mouhamed Diao", "Dieuwrigne Saliou Seck", "Sokhna Diéyenaba Diop", "Sokhna Safiétou Sarr", "Sokhna Khadidiatou Sall", "Sokhna Adama Sarr", "Sokhna Ndéye Mbaye", "Sokhna Ndéye Camara", "Sokhna Awa Yacine Fall", "Sokhna Paya Touré", "Sokhna Sofia Diao", "Sokhna Ya Mariéme Sall", "Sokhna Fily Traoré", "Sokhna Fatou Camara", "Sokhna Rokhaya Sall", "Sokhna Awa Camara"];
 
-    // RÉCUPÉRATION LIVE TOUTES LES SECONDES
     async function fetchData() {
         try {
             const r = await fetch(`${API_URL}?t=${new Date().getTime()}`);
             const newData = await r.json();
-            
-            // On ne rafraîchit l'affichage que si les données ont changé pour éviter les clignotements
             if (JSON.stringify(newData) !== JSON.stringify(dataStore)) {
                 dataStore = Array.isArray(newData) ? newData : [];
                 render();
             }
-        } catch (e) { console.error("Erreur Sync"); }
+        } catch (e) { console.log("Sync..."); }
     }
 
     async function pushData() {
@@ -160,8 +156,8 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(dataStore)
             });
-        } catch (e) { alert("Erreur de sauvegarde"); }
-        setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 500);
+        } catch (e) { alert("Erreur d'envoi"); }
+        setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 600);
     }
 
     function render() {
@@ -179,7 +175,6 @@
 
             totalReste += reste; totalPaye += (p.a + p.q);
 
-            // Filtrage par nom
             if (nom.toLowerCase().includes(currentSearch.toLowerCase())) {
                 grid.innerHTML += `
                     <div class="member-card">
@@ -196,16 +191,15 @@
                         ${isAdmin ? `
                             <div class="admin-zone">
                                 <input type="number" id="a${id}" class="admin-input" placeholder="+ Adyya">
-                                <button onclick="updatePay(${id},'a')" class="btn-save">Valider</button>
+                                <button onclick="updatePay(${id},'a')" class="btn-save">OK</button>
                                 <input type="number" id="q${id}" class="admin-input" placeholder="+ Quin">
-                                <button onclick="updatePay(${id},'q')" class="btn-save">Valider</button>
+                                <button onclick="updatePay(${id},'q')" class="btn-save">OK</button>
                             </div>
-                        ` : `<button class="btn-wave" onclick="openWave()">PAYER MA PART</button>`}
+                        ` : `<button class="btn-wave" onclick="openWave()">INFOS PAIEMENT</button>`}
                     </div>
                 `;
             }
         });
-
         document.getElementById('detteGlobale').innerText = totalReste.toLocaleString() + " F";
         document.getElementById('totalEncaisse').innerText = totalPaye.toLocaleString() + " F";
     }
@@ -221,32 +215,19 @@
         await pushData();
     }
 
-    function filterCards() {
-        currentSearch = document.getElementById('searchInput').value;
-        render();
-    }
+    function filterCards() { currentSearch = document.getElementById('searchInput').value; render(); }
 
     function toggleAdmin() {
         if (!isAdmin) {
-            if (prompt("Entrez le code secret :") === SECRET) {
-                isAdmin = true;
-                document.getElementById('adminBtn').innerText = "🔓 QUITTER ADMIN";
-                render();
-            }
-        } else {
-            isAdmin = false;
-            document.getElementById('adminBtn').innerText = "🔐 ACCÈS RESPONSABLE";
-            render();
-        }
+            if (prompt("Code secret :") === SECRET) { isAdmin = true; document.getElementById('adminBtn').innerText = "🔓 QUITTER ADMIN"; render(); }
+        } else { isAdmin = false; document.getElementById('adminBtn').innerText = "🔐 ACCÈS RESPONSABLE"; render(); }
     }
 
     function openWave() { document.getElementById('waveModal').style.display = 'flex'; }
     function closeWave() { document.getElementById('waveModal').style.display = 'none'; }
 
-    // LANCEMENT DU CYCLE LIVE
     fetchData(); 
-    setInterval(fetchData, 1000); // Rafraîchissement automatique toutes les secondes
-
+    setInterval(fetchData, 1000);
 </script>
 </body>
 </html>
